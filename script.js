@@ -10,9 +10,9 @@ function removeAccents(str, e) {
   str = str.trim();
   // str = str.trim().replace(/\s/g, ' ');
   let content = str.normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, ' ')
+            .replace(/[\u0300-\u036f]/g, '')
             .replace(/đ/g, 'd').replace(/Đ/g, 'D');
-   let result = content.replace(/ +/g, '');
+   let result = content.replace(/ +/g, ' ');
 //     let result = content.replace(/ +/g, '-').toLowerCase();
   // let result = content.split(" ").join('-').toLowerCase();
    console.log(result);
