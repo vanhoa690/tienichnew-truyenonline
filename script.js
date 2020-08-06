@@ -3,9 +3,10 @@
 let tx = document.getElementById('tx');
 let btn = document.getElementById('btn');
 let show = document.getElementById('show');
-btn.addEventListener('click', () => removeAccents(tx.value));
+btn.addEventListener('click', (e) => removeAccents(tx.value, e));
 
-function removeAccents(str) {
+function removeAccents(str, e) {
+  e.preventDefault();
   str = str.trim();
   // str = str.trim().replace(/\s/g, ' ');
   let content = str.normalize('NFD')
